@@ -12,14 +12,14 @@ public class ThamChieuVaThamTri {
         System.out.println(x);
 
         Person p ;
-        p = new Person("john");
-        p.setAge(21);
-        celebrateBirthday(p);
-        System.out.println(p.getAge());
+//        p = new Person("john");
+//        p.setAge(21);
+//        celebrateBirthday(p);
+//        System.out.println(p.getAge());
 
     }
 
-    static void celebrateBirthday(Person p){
-        p.setAge(p.getAge() + 1);
-    }
+//    static void celebrateBirthday(Person p){
+//        p.setAge(p.getAge() + 1);
+//    }
 }
