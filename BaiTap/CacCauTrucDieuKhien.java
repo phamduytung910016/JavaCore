@@ -1,6 +1,8 @@
 package BaiTap;
 
 
+import java.util.Scanner;
+
 public class CacCauTrucDieuKhien {
 
     public static int bai82(int a, int b, int c) {
@@ -154,6 +156,150 @@ public class CacCauTrucDieuKhien {
         }
     }
 
+    public static void bai98(double a, double b, double c, double d, double e, double f) {
+        double det = a * e - b * d;
+        if (det == 0) {
+            System.out.println("Phương trình vô nghiệm");
+            return;
+        }
+        double detX = e * c - b * f;
+        double detY = f * a - d * c;
+
+        if (detX == 0 || detY == 0) {
+            System.out.println("Phương trình có vô số nghiệm");
+            return;
+        } else {
+
+            System.out.printf("X = %.4f", (detX / det));
+            System.out.println();
+            System.out.printf("Y = %.4f", (detY / det));
+
+        }
+    }
+
+    public static void bai99(int a, int b, int c) {
+        int temp;
+        if (a > b) {
+            temp = a;
+            a = b;
+            b = temp;
+        }
+        if (a > c) {
+            temp = a;
+            a = c;
+            c = temp;
+        }
+        if (b > c) {
+            temp = b;
+            b = c;
+            c = temp;
+        }
+        System.out.println("a = " + a + ", b = " + b + ", c = " + c);
+    }
+
+    public static void bai101() {
+        int month, year;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhập tháng: ");
+        month = sc.nextInt();
+        if (month > 12 || month < 1) {
+            System.out.println("Tháng không hợp lệ");
+            return;
+        }
+        System.out.println();
+        System.out.println("Nhập năm: ");
+        year = sc.nextInt();
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: {
+                System.out.println("Tháng có 31 ngày");
+                break;
+            }
+            case 2: {
+                if (year % 4 == 0) {
+                    System.out.println("Tháng có 29 ngày");
+                    break;
+                } else {
+                    System.out.println("Tháng có 28 ngày");
+                    break;
+                }
+            }
+            default: {
+                System.out.println("Tháng có 30 ngày");
+                break;
+            }
+
+        }
+    }
+
+
+    public static void bai102() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Nhập ngày: ");
+        int day = sc.nextInt();
+        System.out.println("Nhập tháng: ");
+        int month = sc.nextInt();
+        System.out.println("Nhập năm: ");
+        int year = sc.nextInt();
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12: {
+                if (day == 31) {
+                    if (month == 12) {
+                        System.out.println("Ngày kế tiếp: 0/1/" + (year + 1));
+                        break;
+                    } else {
+                        System.out.println("Ngày kế tiếp: 0/" + (month + 1) + "/" + year);
+                        break;
+                    }
+                } else {
+                    System.out.println("Ngày kế tiếp: " + (day + 1) + "/" + month + "/" + year);
+                    break;
+                }
+            }
+            case 2: {
+                if (year % 4 == 0) {
+                    if (day == 29) {
+                        System.out.println("Ngày kế tiếp: 0/3/" + year);
+                        break;
+                    } else {
+                        System.out.println("Ngày kế tiếp: " + (day + 1) + "/" + month + "/" + year);
+                        break;
+                    }
+                } else {
+                    if (day == 28) {
+                        System.out.println("Ngày kế tiếp: 0/3/" + year);
+                        break;
+                    } else {
+                        System.out.println("Ngày kế tiếp: " + (day + 1) + "/" + month + "/" + year);
+                        break;
+                    }
+                }
+            }
+            default: {
+                if (day == 30) {
+                    System.out.println("Ngày kế tiếp: 0/" + (month + 1) + "/" + year);
+                    break;
+                } else {
+                    System.out.println("Ngày kế tiếp: " + (day + 1) + "/" + month + "/" + year);
+                    break;
+                }
+            }
+        }
+    }
+
+
+
 
     public static void main(String[] args) {
 //        System.out.println(bai82(2,3,6));
@@ -173,6 +319,11 @@ public class CacCauTrucDieuKhien {
         //bai94();
 //        bai95(-3.4 , 4.7 , -5.77);
 //        bai96(20);
-        bai97(3, 6, 12);
+//        bai97(3, 6, 12);
+//        bai98(1,2,3,4,5,6);
+//        bai99(6,2,1);
+//        bai101();
+
+        bai102();
     }
 }

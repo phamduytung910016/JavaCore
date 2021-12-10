@@ -68,6 +68,8 @@ package OOP;
 //    }
 //}
 
+
+
 class Person{
     private String name;
     private int dob;
@@ -75,6 +77,12 @@ class Person{
         this.name = name;
         this.dob = dob;
     }
+
+//    public int add(int a , int b ,int c){}
+//
+//    public double add(double a, double b , double c){}
+
+
 
     public String getName(){
         return this.name;
@@ -127,6 +135,34 @@ class SuperClass{
     }
 }
 
+
+class Parent{
+
+    private int age;
+
+    public Parent(int age) {
+        this.age = age;
+
+    }
+
+    protected void sound(){
+        System.out.println("Parent");
+    }
+}
+
+class Child extends Parent {
+
+    private String name;
+
+    public Child(int age ,String name) {
+        super(age);
+        this.name = name;
+    }
+
+    public void eat(){
+        super.sound();
+    }
+}
 class SubClass extends SuperClass{
     @Override
     public void display() {

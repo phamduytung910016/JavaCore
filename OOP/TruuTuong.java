@@ -141,6 +141,7 @@ public class TruuTuong {
         //chỉ có thể khởi tạo được đối tượng của lớp con
         Animal a = new Cat1();
 
+
         Bird bird = new Bird();
         bird.eat();
         bird.fly();

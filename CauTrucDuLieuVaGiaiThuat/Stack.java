@@ -79,15 +79,98 @@ class Stack_Array{
     }
 }
 
+
+
+class Node_Stack_Linked{
+    private int data;
+    public Node_Stack_Linked next;
+
+    public Node_Stack_Linked(int data){
+        this.data = data;
+    }
+
+    public void printData(){
+        System.out.println("Data = " + this.data + "\n");
+    }
+}
+
+class Stack_Linked{
+    private Node_Stack_Linked head;
+    private int size;
+
+    public Stack_Linked() {
+        this.size = 0;
+        this.head = null;
+    }
+
+    public void push(Node_Stack_Linked node_stack_linked){
+        node_stack_linked.next = this.head;
+        this.head = node_stack_linked;
+        this.size++;
+    }
+
+    public Node_Stack_Linked pop(){
+        if(isEmpty()){
+            System.out.println("Stack is empty");
+            return null;
+        }
+        Node_Stack_Linked node_stack_linked = this.head;
+        this.head = this.head.next;
+        this.size--;
+        return node_stack_linked;
+
+    }
+
+    public boolean isEmpty(){
+        return (this.size == 0);
+    }
+
+    public Node_Stack_Linked peek(){
+        if(isEmpty()){
+            System.out.println("Stack is empty");
+            return null;
+        }
+        return this.head;
+    }
+
+    public void print(){
+        System.out.println("Stack: \n");
+        Node_Stack_Linked node_stack_linked = this.head;
+        while(node_stack_linked != null){
+            node_stack_linked.printData();
+            node_stack_linked = node_stack_linked.next;
+        }
+    }
+}
+
+
+
+
+
 public class Stack {
     public static void main(String[] args) {
+//        System.out.println("Stack - Java \n");
+//        Stack_Array stack = new Stack_Array(6);
+//        stack.push(new Node_Stack_Array(12));
+//        stack.push(new Node_Stack_Array(11));
+//        stack.push(new Node_Stack_Array(10));
+//        stack.push(new Node_Stack_Array(9));
+//        stack.push(new Node_Stack_Array(8));
+//
+//        stack.print();
+//
+//        stack.pop();
+//        stack.print();
+
+
+
         System.out.println("Stack - Java \n");
-        Stack_Array stack = new Stack_Array(6);
-        stack.push(new Node_Stack_Array(12));
-        stack.push(new Node_Stack_Array(11));
-        stack.push(new Node_Stack_Array(10));
-        stack.push(new Node_Stack_Array(9));
-        stack.push(new Node_Stack_Array(8));
+        Stack_Linked stack = new Stack_Linked();
+        stack.push(new Node_Stack_Linked(12));
+        stack.push(new Node_Stack_Linked(11));
+        stack.push(new Node_Stack_Linked(10));
+        stack.push(new Node_Stack_Linked(9));
+        stack.push(new Node_Stack_Linked(8));
 
         stack.print();
 
