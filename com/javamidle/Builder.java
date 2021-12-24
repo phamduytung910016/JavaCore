@@ -217,13 +217,39 @@ class Computer {
 
 }
 
-class DemoBuilderPattern {
-    public static void main(String[] args) {
-        // Using builder to get the object in a single line of code and
-        // without any inconsistent state or arguments management issues
-        Computer comp = new Computer.ComputerBuilder("500 GB", "2 GB").setBluetoothEnabled(true)
-                .setGraphicsCardEnabled(true).build();
 
-        System.out.println(comp);
+class Person {
+    public String name;
+    public int age;
+    public float height;
+
+    public Person(String name, int age, float height) {
+        this.name = name;
+        this.age = age;
+        this.height = height;
+    }
+
+    public Person getInstance() {
+        return this;
+    }
+}
+class DemoBuilderPattern {
+//    public static void main(String[] args) {
+//        // Using builder to get the object in a single line of code and
+//        // without any inconsistent state or arguments management issues
+//        Computer comp = new Computer.ComputerBuilder("500 GB", "2 GB").setBluetoothEnabled(true)
+//                .setGraphicsCardEnabled(true).build();
+//
+//        System.out.println(comp);
+//    }
+
+    public static void main(String[] args) {
+        Person a = new Person("Chau", 21, 1.7f);
+        System.out.println(a);
+        System.out.println(a.getInstance());
+        Person b = a;
+        Person c = a.getInstance();
+        System.out.println(b);
+        System.out.println(c);
     }
 }

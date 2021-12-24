@@ -56,18 +56,18 @@ class Bikini implements Outfit{
     }
 }
 
-class Girl {
-    private Outfit outfit;// mỗi cô gái sẽ có 1 bộ bikini
-
-//    public Girl() {
-//        outfit = new Bikini();//khi khởi tạo 1 cô gái , bạn có thể cho cô ấy mặc đồ
+//class Girl {
+//    private Outfit outfit;// mỗi cô gái sẽ có 1 bộ bikini
+//
+////    public Girl() {
+////        outfit = new Bikini();//khi khởi tạo 1 cô gái , bạn có thể cho cô ấy mặc đồ
+////    }
+//
+//    public Girl(Outfit anything) {
+//        this.outfit = anything;//Tạo ra 1 cô gái, với 1 món đồ tùy biến
+//        //Không bị phụ thuộc quá nhiều vào thời điểm khởi tạo, hay code
 //    }
-
-    public Girl(Outfit anything) {
-        this.outfit = anything;//Tạo ra 1 cô gái, với 1 món đồ tùy biến
-        //Không bị phụ thuộc quá nhiều vào thời điểm khởi tạo, hay code
-    }
-}
+//}
 
 
 
@@ -79,7 +79,7 @@ class Girl {
 
 public class DependencyInjection {
     public static void main(String[] args) {
-        Outfit bikini = new Bikini();//tạo ra đối tượng bikini ở ngoài đối tượng
-        Girl ngocTrinh = new Girl(bikini);//Mặc nó vào cho cô gái khi tạo ra cô ấy.
+//        Outfit bikini = new Bikini();//tạo ra đối tượng bikini ở ngoài đối tượng
+//        Girl ngocTrinh = new Girl(bikini);//Mặc nó vào cho cô gái khi tạo ra cô ấy.
     }
 }
